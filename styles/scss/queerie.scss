@@ -15,8 +15,11 @@ $gqTopMenuBG: rgba(0,0,0,0.65);
 $gqWhite: #ffffff;
 $gqBlue: #041a5f;
 $gqOrange: #cb7817;
+$gqDarkOrange: #b56b14;
 $gqBrown: #523f2f;
 $gqBlack: #202020;
+$gqBeige: #f8e6a4;
+$gqYellow: #f5d751;
 
 $headerHeight: 500px;
 $menuHeight: 68px;
@@ -24,8 +27,11 @@ $aboutBoxHeight: 169px;
 $logoHeight: $headerHeight - ($menuHeight * 2);
 $footerHeight: 194px;
 $primaryMargin: 40px;
+$footerLogoWidth: 200px;
+$footerLogoSpacing: 50px;
 
 $breakSmall: 860px;
+$smLogoBreak: 980px;
 $breakBig: 1200px;
 
 
@@ -63,11 +69,14 @@ $breakBig: 1200px;
   margin: 0 10px;
 }
 
-@mixin menuButton {
+@mixin menuButton($thisImage, $thisWidth) {
   display: inline-block;
   height: $menuHeight;
+  width: $thisWidth;
   padding: 0 10px;
   margin: 0 10px;
+  background-size: $thisWidth;
+  background-image: url($thisImage);
   background-repeat: no-repeat;
   background-position: bottom;
   &:hover {
@@ -189,58 +198,31 @@ body {
       @include menuImage;
     }
     div#menu-listen {
-      @include menuButton;
-      width: 136px;
-      background-size: 136px;
-      background-image: url("../../images/menu-listen.png");
+      @include menuButton("../../images/menu-listen.png", 136px);
     }
     div#menu-donate {
-      @include menuButton;
-      width: 68px;
-      background-size: 68px;
-      background-image: url("../../images/menu-donate.png");
+      @include menuButton("../../images/menu-donate.png", 68px);
     }
     div#menu-home {
-      @include menuButton;
-      width: 47px;
-      background-size: 47px;
-      background-image: url("../../images/menu-home.png");
+      @include menuButton("../../images/menu-home.png", 47px);
     }
     div#menu-about {
-      @include menuButton;
-      width: 59px;
-      background-size: 59px;
-      background-image: url("../../images/menu-about.png");
+      @include menuButton("../../images/menu-about.png", 59px);
     }
     div#menu-archive {
-      @include menuButton;
-      width: 74px;
-      background-size: 74px;
-      background-image: url("../../images/menu-archive.png");
+      @include menuButton("../../images/menu-archive.png", 74px);
     }
     div#menu-contact {
-      @include menuButton;
-      width: 78px;
-      background-size: 78px;
-      background-image: url("../../images/menu-contact.png");
+      @include menuButton("../../images/menu-contact.png", 78px);
     }
     div#menu-facebook {
-      @include menuButton;
-      width: 41px;
-      background-size: 41px;
-      background-image: url("../../images/menu-facebook.png");
+      @include menuButton("../../images/menu-facebook.png", 41px);
     }
     div#menu-twitter {
-      @include menuButton;
-      width: 41px;
-      background-size: 41px;
-      background-image: url("../../images/menu-twitter.png");
+      @include menuButton("../../images/menu-twitter.png", 41px);
     }
     div#menu-coop {
-      @include menuButton;
-      width: 115px;
-      background-size: 115px;
-      background-image: url("../../images/menu-coop.png");
+      @include menuButton("../../images/menu-coop.png", 115px);
     }
   }
 
@@ -259,7 +241,7 @@ body {
       display: inline-block;
       overflow-y: hidden;
 
-      @media screen and (max-width: 980px) {
+      @media screen and (max-width: $smLogoBreak) {
         display: none;
       }
     }
@@ -275,7 +257,7 @@ body {
       margin-right: $primaryMargin;
       display: inline-block;
 
-      @media screen and (max-width: 980px) {
+      @media screen and (max-width: $smLogoBreak) {
         display: none;
       }
     }
@@ -351,8 +333,84 @@ body {
 }
 
 footer {
+  position: relative;
   height: $footerHeight;
   width: 100%;
   background-color: $gqOrange;
+  overflow: hidden;
   @include fullWidth;
+
+  #footer-top {
+    position: absolute;
+    top: 0;
+    height: 23px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.07);
+    @include fullWidth;
+  }
+
+  #footer-logo {
+    position: relative;
+    height: $footerHeight;
+    width: ($footerLogoWidth + ($footerLogoSpacing * 2));
+    background-color: $gqDarkOrange;
+
+    @media screen and (max-width: $breakSmall) {
+      display: none;
+    }
+
+    img {
+      position: absolute;
+      width: $footerLogoWidth;
+      height: auto;
+      bottom: 10px;
+      left: $footerLogoSpacing;
+    }
+  }
+
+  #footer-coop {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: $footerHeight;
+    width: $footerLogoWidth;
+
+    @media screen and (max-width: $smLogoBreak) {
+      display: none;
+    }
+
+    img {
+      position: absolute;
+      width: $footerLogoWidth;
+      height: auto;
+      bottom: 10px;
+      right: $footerLogoSpacing;
+    }
+  }
+
+  #footer-bottom {
+    position: relative;
+
+    #footer-left, #footer-content, #footer-right {
+      display: inline-block;
+    }
+
+    #footer-content {
+      vertical-align: top;
+      padding: 20px;
+
+      p.footer-link-row {
+        margin: 19px 0;
+      }
+
+      a, a:link {
+        color: $gqBeige;
+        margin: 0 20px;
+      }
+
+      a:hover {
+        color: $gqYellow;
+      }
+    }
+  }
 }
