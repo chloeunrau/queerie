@@ -225,7 +225,7 @@ body {
       @include menuButton("../../images/menu-twitter.png", 41px);
     }
     div#menu-coop {
-      @include menuButton("../../images/menu-coop.png", 115px);
+      @include menuButton("../../images/menu-coop.png", 116px);
     }
   }
 
@@ -337,7 +337,7 @@ body {
     text-align: center;
     @include fullWidth;
 
-    font-family: 'Oswald', monospace;
+    font-family: 'Oswald', Arial, sans-serif;
     font-size: 22px;
     color: $gqWhite;
 
@@ -437,8 +437,6 @@ footer {
     position: absolute;
     bottom: 0;
     right: 0;
-    height: $footerHeight;
-    width: $footerLogoWidth;
 
     @media screen and (max-width: $smLogoBreak) {
       display: none;
@@ -448,7 +446,7 @@ footer {
       position: absolute;
       width: $footerLogoWidth;
       height: auto;
-      bottom: 10px;
+      bottom: 20px;
       right: $footerLogoSpacing;
     }
   }
@@ -462,7 +460,7 @@ footer {
 
     #footer-content {
       vertical-align: top;
-      padding: 20px;
+      padding: 15px;
 
       p.footer-link-row {
         margin: 19px 0;

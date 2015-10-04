@@ -32,6 +32,7 @@
       <div id="footer-coop">
         <img src="<?php echo bloginfo('template_url'); ?>/images/sm-horizontal-coop.png" />
       </div>
+      <div class="clearfix"></div>
     </div>
 
   </div>

@@ -4,7 +4,7 @@
 register_sidebar( array(
     'id'          => 'homeother',
     'name'        => 'Home Other',
-    'description' => 'The Widget area for additional content for the Home page. Appears below the About Box and above the Next Time box.'
+    'description' => 'The Widget area for additional content for the Home page. Appears below all other Home page content.'
 ) );
 register_sidebar( array(
     'id'          => 'homeaboutleft',
