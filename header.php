@@ -40,22 +40,22 @@
 
   <div id="bottom-menu">
     <div id="bottom-menu-content" class="menu-content">
-      <a href="#">
+      <a href="<?php echo bloginfo('home'); ?>">
         <div id="menu-home"></div>
       </a>
-      <a href="#">
+      <a href="<?php echo bloginfo('home'); ?>/about/">
         <div id="menu-about"></div>
       </a>
-      <a href="#">
+      <a href="<?php echo bloginfo('home'); ?>/archive/">
         <div id="menu-archive"></div>
       </a>
-      <a href="#">
+      <a href="<?php echo bloginfo('home'); ?>/contact/">
         <div id="menu-contact"></div>
       </a>
-      <a href="#">
+      <a href="https://www.facebook.com/Gender-Queeries-1536585859951660/timeline/" target="_blank">
         <div id="menu-facebook"></div>
       </a>
-      <a href="#">
+      <a href="https://twitter.com/GenderQueeries" target="_blank">
         <div id="menu-twitter"></div>
       </a>
       <a href="http://coopradio.org/" target="_blank">
