@@ -23,6 +23,7 @@ $menuHeight: 68px;
 $aboutBoxHeight: 169px;
 $logoHeight: $headerHeight - ($menuHeight * 2);
 $footerHeight: 194px;
+$primaryMargin: 40px;
 
 $breakSmall: 860px;
 $breakBig: 1200px;
@@ -55,11 +56,23 @@ $breakBig: 1200px;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 }
 
-@mixin menuButton {
+@mixin menuImage {
   height: $menuHeight;
   width: auto;
   padding: 0 10px;
   margin: 0 10px;
+}
+
+@mixin menuButton {
+  display: inline-block;
+  height: $menuHeight;
+  padding: 0 10px;
+  margin: 0 10px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  &:hover {
+    background-position: top;
+  }
 }
 
 @mixin linkNormal {
@@ -82,7 +95,7 @@ $breakBig: 1200px;
 
 
 
-/* SASS */
+/* STYLES */
 
 a, a:link {
   text-decoration: none;
@@ -173,7 +186,61 @@ body {
 
   .menu-content {
     img {
+      @include menuImage;
+    }
+    div#menu-listen {
       @include menuButton;
+      width: 136px;
+      background-size: 136px;
+      background-image: url("../../images/menu-listen.png");
+    }
+    div#menu-donate {
+      @include menuButton;
+      width: 68px;
+      background-size: 68px;
+      background-image: url("../../images/menu-donate.png");
+    }
+    div#menu-home {
+      @include menuButton;
+      width: 47px;
+      background-size: 47px;
+      background-image: url("../../images/menu-home.png");
+    }
+    div#menu-about {
+      @include menuButton;
+      width: 59px;
+      background-size: 59px;
+      background-image: url("../../images/menu-about.png");
+    }
+    div#menu-archive {
+      @include menuButton;
+      width: 74px;
+      background-size: 74px;
+      background-image: url("../../images/menu-archive.png");
+    }
+    div#menu-contact {
+      @include menuButton;
+      width: 78px;
+      background-size: 78px;
+      background-image: url("../../images/menu-contact.png");
+    }
+    div#menu-facebook {
+      @include menuButton;
+      width: 41px;
+      background-size: 41px;
+      background-image: url("../../images/menu-facebook.png");
+    }
+    div#menu-twitter {
+      @include menuButton;
+      width: 41px;
+      background-size: 41px;
+      background-image: url("../../images/menu-twitter.png");
+    }
+    div#menu-coop {
+      @include menuButton;
+      width: 115px;
+      background-size: 115px;
+      background-image: url("../../images/menu-coop.png");
     }
   }
 
@@ -182,16 +249,17 @@ body {
     width: 100%;
     background-color: $gqTopMenuBG;
     text-align: center;
+    overflow: hidden;
     @include fullWidth;
 
     #sm-horizontal-left {
       height: $menuHeight;
       float: left;
-      margin-left: 40px;
+      margin-left: $primaryMargin;
       display: inline-block;
       overflow-y: hidden;
 
-      @media screen and (max-width: 1000px) {
+      @media screen and (max-width: 980px) {
         display: none;
       }
     }
@@ -204,10 +272,10 @@ body {
     #sm-horizontal-right {
       height: $menuHeight;
       float: right;
-      margin-right: 40px;
+      margin-right: $primaryMargin;
       display: inline-block;
 
-      @media screen and (max-width: 1000px) {
+      @media screen and (max-width: 980px) {
         display: none;
       }
     }
@@ -215,12 +283,14 @@ body {
   #bottom-menu {
     height: $menuHeight;
     width: 100%;
+    overflow: hidden;
     @include linearGradient(#ffffff, #eeeeee);
     @include fullWidth;
 
     @media screen and (max-width: $breakSmall) {
       height: auto;
       min-height: $menuHeight;
+      overflow: auto;
     }
 
     #bottom-menu-content {
@@ -232,12 +302,12 @@ body {
 }
 
 .main-content {
-  padding: 40px;
+  padding: $primaryMargin;
 
   // Styles for Widgets contained in the main content area
   li.widget {
     list-style-type: none;
-    padding-bottom: 40px;
+    padding-bottom: $primaryMargin;
 
     img {
       margin-top: 5px;
@@ -275,7 +345,7 @@ body {
     width: 100%;
     background-color: $gqBlue;
     margin-top: -15px;
-    margin-bottom: 40px;
+    margin-bottom: $primaryMargin;
     @include fullWidth;
   }
 }

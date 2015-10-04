@@ -27,10 +27,10 @@
     </div>
     <div id="top-menu-content" class="menu-content">
       <a href="http://www.coopradio.org/listen/cfro-mid.mp3.pls" target="_blank">
-        <img src="<?php echo bloginfo('template_url'); ?>/images/menu-listen.png" />
+        <div id="menu-listen"></div>
       </a>
       <a href="http://weblink.donorperfect.com/coop_membership" target="_blank">
-        <img src="<?php echo bloginfo('template_url'); ?>/images/menu-donate.png" />
+        <div id="menu-donate"></div>
       </a>
     </div>
     <div id="sm-horizontal-right" class="menu-content">
@@ -41,25 +41,25 @@
   <div id="bottom-menu">
     <div id="bottom-menu-content" class="menu-content">
       <a href="#">
-        <img src="<?php echo bloginfo('template_url'); ?>/images/menu-home.png" />
+        <div id="menu-home"></div>
       </a>
       <a href="#">
-        <img src="<?php echo bloginfo('template_url'); ?>/images/menu-about.png" />
+        <div id="menu-about"></div>
       </a>
       <a href="#">
-        <img src="<?php echo bloginfo('template_url'); ?>/images/menu-archive.png" />
+        <div id="menu-archive"></div>
       </a>
       <a href="#">
-        <img src="<?php echo bloginfo('template_url'); ?>/images/menu-contact.png" />
+        <div id="menu-contact"></div>
       </a>
       <a href="#">
-        <img src="<?php echo bloginfo('template_url'); ?>/images/menu-facebook.png" />
+        <div id="menu-facebook"></div>
       </a>
       <a href="#">
-        <img src="<?php echo bloginfo('template_url'); ?>/images/menu-twitter.png" />
+        <div id="menu-twitter"></div>
       </a>
       <a href="http://coopradio.org/" target="_blank">
-        <img src="<?php echo bloginfo('template_url'); ?>/images/menu-coop.png" />
+        <div id="menu-coop"></div>
       </a>
     </div>
   </div>
