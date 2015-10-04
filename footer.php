@@ -15,16 +15,16 @@
 
     <div id="footer-content">
       <p class="footer-link-row">
-        <a href="">LISTEN NOW</a><a href="">DONATE</a>
+        <a href="http://www.coopradio.org/listen/cfro-mid.mp3.pls" target="_blank">LISTEN NOW</a><a href="http://weblink.donorperfect.com/coop_membership" target="_blank">DONATE</a>
       </p>
       <p class="footer-link-row">
-        <a href="">HOME</a><a href="">ABOUT</a><a href="">ARCHIVE</a><a href="">CONTACT</a>
+        <a href="<?php echo bloginfo('home'); ?>">HOME</a><a href="<?php echo bloginfo('home'); ?>/about/">ABOUT</a><a href="<?php echo bloginfo('home'); ?>/archive/">ARCHIVE</a><a href="<?php echo bloginfo('home'); ?>/contact/">CONTACT</a>
       </p>
       <p class="footer-link-row">
-        <a href="">FACEBOOK</a><a href="">TWITTER</a>
+        <a href="https://www.facebook.com/Gender-Queeries-1536585859951660/timeline/" target="_blank">FACEBOOK</a><a href="https://twitter.com/GenderQueeries" target="_blank">TWITTER</a>
       </p>
       <p class="footer-link-row">
-        <a href="">CO-OP RADIO</a>
+        <a href="http://coopradio.org/" target="_blank">CO-OP RADIO</a>
       </p>
     </div>
 
