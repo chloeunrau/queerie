@@ -1,0 +1,192 @@
+/* IMPORT */
+/* VARIABLES */
+@import url(http://fonts.googleapis.com/css
+            ?family=Open+Sans:400italic,700italic,400,700);
+/* MIXINS */
+a, a:link {
+  text-decoration: none;
+  cursor: pointer; }
+
+img.alignright {
+  float: right;
+  margin: 0 0 18px 18px; }
+
+img.alignleft {
+  float: left;
+  margin: 0 18px 18px 0; }
+
+img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+a img.alignright {
+  float: right;
+  margin: 0 0 18px 18px; }
+
+a img.alignleft {
+  float: left;
+  margin: 0 18px 18px 0; }
+
+a img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.clearfix {
+  clear: both; }
+
+html, body {
+  height: 100%;
+  overflow-x: hidden; }
+
+body {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased !important;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  background-color: #fff; }
+
+#wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden; }
+
+@media screen and (min-width: 1200px) {
+    #content {
+      max-width: 1200px;
+      margin: 0 auto 0 auto; } }
+
+#header {
+  position: relative;
+  height: 500px;
+  background-color: #523f2f;
+  text-align: center;
+  overflow-y: hidden;
+  background-image: url("../../images/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain; }
+  @media screen and (max-width: 860px) {
+  #header {
+    background-size: 860px; } }
+  #header img.main-logo {
+    height: 364px;
+    width: auto; }
+
+#nav {
+  position: relative;
+  margin-top: -137px; }
+  #nav .menu-content img {
+    height: 68px;
+    width: auto;
+    padding: 0 10px;
+    margin: 0 10px; }
+  #nav #top-menu {
+    height: 68px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    text-align: center;
+    margin-left: -9999px;
+    margin-right: -9999px;
+    padding-left: 9999px;
+    padding-right: 9999px;
+    /* SASS */ }
+    #nav #top-menu #sm-horizontal-left {
+      height: 68px;
+      float: left;
+      margin-left: 40px;
+      display: inline-block;
+      overflow-y: hidden; }
+      @media screen and (max-width: 1000px) {
+  #nav #top-menu #sm-horizontal-left {
+    display: none; } }
+    #nav #top-menu #top-menu-content {
+      height: 68px;
+      display: inline-block; }
+    #nav #top-menu #sm-horizontal-right {
+      height: 68px;
+      float: right;
+      margin-right: 40px;
+      display: inline-block; }
+      @media screen and (max-width: 1000px) {
+  #nav #top-menu #sm-horizontal-right {
+    display: none; } }
+  #nav #bottom-menu {
+    height: 68px;
+    width: 100%;
+    /* Old browsers */
+    background: #fff;
+    /* FF3.6+ */
+    background: -moz-linear-gradient(top, #fff 0%, #eee 100%);
+    /* Chrome,Safari4+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(100%, #eee));
+    /* Chrome10+,Safari5.1+ */
+    background: -webkit-linear-gradient(top, #fff 0%, #eee 100%);
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top, #fff 0%, #eee 100%);
+    /* IE10+ */
+    background: -ms-linear-gradient(top, #fff 0%, #eee 100%);
+    /* W3C */
+    background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+    /* IE6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000',GradientType=0);
+    margin-left: -9999px;
+    margin-right: -9999px;
+    padding-left: 9999px;
+    padding-right: 9999px;
+    /* SASS */ }
+    @media screen and (max-width: 860px) {
+  #nav #bottom-menu {
+    height: auto;
+    min-height: 68px; } }
+    #nav #bottom-menu #bottom-menu-content {
+      width: 100%;
+      text-align: center;
+      display: inline-block; }
+
+.main-content {
+  padding: 40px; }
+  .main-content li.widget {
+    list-style-type: none;
+    padding-bottom: 40px; }
+    .main-content li.widget img {
+      margin-top: 5px; }
+    .main-content li.widget a img {
+      border-style: solid;
+      border-width: 1px;
+      border-color: #cb7817; }
+      .main-content li.widget a img:hover {
+        border-color: #523f2f; }
+    .main-content li.widget h1 {
+      font-size: 18px;
+      color: #202020;
+      padding-bottom: 0; }
+    .main-content li.widget h2 {
+      color: #202020; }
+
+.content-home #about-box {
+  height: 169px;
+  width: 100%;
+  background-color: #041a5f;
+  margin-top: -15px;
+  margin-bottom: 40px;
+  margin-left: -9999px;
+  margin-right: -9999px;
+  padding-left: 9999px;
+  padding-right: 9999px;
+  /* SASS */ }
+
+footer {
+  height: 194px;
+  width: 100%;
+  background-color: #cb7817;
+  margin-left: -9999px;
+  margin-right: -9999px;
+  padding-left: 9999px;
+  padding-right: 9999px;
+  /* SASS */ }

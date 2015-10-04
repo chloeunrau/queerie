@@ -1,0 +1,288 @@
+
+/* IMPORT */
+
+@import url(http://fonts.googleapis.com/css
+            ?family=Open+Sans:400italic,700italic,400,700);
+
+
+
+
+/* VARIABLES */
+
+$gqTransparent: rgba(0,0,0,0);
+$gqCopyShadow: rgba(0,0,0,0.004);
+$gqTopMenuBG: rgba(0,0,0,0.65);
+$gqWhite: #ffffff;
+$gqBlue: #041a5f;
+$gqOrange: #cb7817;
+$gqBrown: #523f2f;
+$gqBlack: #202020;
+
+$headerHeight: 500px;
+$menuHeight: 68px;
+$aboutBoxHeight: 169px;
+$logoHeight: $headerHeight - ($menuHeight * 2);
+$footerHeight: 194px;
+
+$breakSmall: 860px;
+$breakBig: 1200px;
+
+
+
+
+/* MIXINS */
+
+@mixin initZero {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin fontCopy {
+  font-family: 'Open Sans', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased !important;
+  text-shadow: 1px 1px 1px $gqCopyShadow;
+}
+
+@mixin linearGradient($top, $bottom){
+    background: $top; /* Old browsers */
+    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin menuButton {
+  height: $menuHeight;
+  width: auto;
+  padding: 0 10px;
+  margin: 0 10px;
+}
+
+@mixin linkNormal {
+  //
+}
+
+@mixin linkHover {
+  //
+}
+
+@mixin fullWidth {
+  // Enable background of element to extend to full-width
+  // Not suitable for monitors the size of the moon
+  margin-left: -9999px;
+  margin-right: -9999px;
+  padding-left: 9999px;
+  padding-right: 9999px;
+}
+
+
+
+
+/* SASS */
+
+a, a:link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img.alignright {
+  float: right;
+  margin: 0 0 18px 18px;
+}
+img.alignleft {
+  float: left;
+  margin: 0 18px 18px 0;
+}
+img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+a img.alignright {
+  float: right;
+  margin: 0 0 18px 18px;
+}
+a img.alignleft {
+  float: left;
+  margin: 0 18px 18px 0;
+}
+a img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.clearfix {
+  clear: both;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  @include initZero;
+  @include fontCopy;
+  background-color: $gqWhite;
+}
+
+#wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+#content {
+  @media screen and (min-width: $breakBig) {
+    max-width: $breakBig;
+    margin: 0 auto 0 auto;
+  }
+}
+
+#header {
+  position:relative;
+  height: $headerHeight;
+  background-color: $gqBrown;
+  text-align: center;
+  overflow-y: hidden;
+  background-image: url("../../images/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+
+  @media screen and (max-width: $breakSmall) {
+    background-size: $breakSmall;
+  }
+
+  img.main-logo {
+    height: $logoHeight;
+    width: auto;
+  }
+}
+
+#nav {
+  position: relative;
+  margin-top: -(($menuHeight*2)+1);
+
+  .menu-content {
+    img {
+      @include menuButton;
+    }
+  }
+
+  #top-menu {
+    height: $menuHeight;
+    width: 100%;
+    background-color: $gqTopMenuBG;
+    text-align: center;
+    @include fullWidth;
+
+    #sm-horizontal-left {
+      height: $menuHeight;
+      float: left;
+      margin-left: 40px;
+      display: inline-block;
+      overflow-y: hidden;
+
+      @media screen and (max-width: 1000px) {
+        display: none;
+      }
+    }
+
+    #top-menu-content {
+      height: $menuHeight;
+      display: inline-block;
+    }
+
+    #sm-horizontal-right {
+      height: $menuHeight;
+      float: right;
+      margin-right: 40px;
+      display: inline-block;
+
+      @media screen and (max-width: 1000px) {
+        display: none;
+      }
+    }
+  }
+  #bottom-menu {
+    height: $menuHeight;
+    width: 100%;
+    @include linearGradient(#ffffff, #eeeeee);
+    @include fullWidth;
+
+    @media screen and (max-width: $breakSmall) {
+      height: auto;
+      min-height: $menuHeight;
+    }
+
+    #bottom-menu-content {
+      width: 100%;
+      text-align: center;
+      display: inline-block;
+    }
+  }
+}
+
+.main-content {
+  padding: 40px;
+
+  // Styles for Widgets contained in the main content area
+  li.widget {
+    list-style-type: none;
+    padding-bottom: 40px;
+
+    img {
+      margin-top: 5px;
+    }
+
+    a {
+      //
+
+      img {
+        border-style: solid;
+        border-width: 1px;
+        border-color: $gqOrange;
+      }
+
+      img:hover {
+        border-color: $gqBrown;
+      }
+    }
+
+    h1 {
+      font-size: 18px;
+      color: $gqBlack;
+      padding-bottom: 0;
+    }
+
+    h2 {
+      color: $gqBlack;
+    }
+  }
+}
+
+.content-home {
+  #about-box {
+    height: $aboutBoxHeight;
+    width: 100%;
+    background-color: $gqBlue;
+    margin-top: -15px;
+    margin-bottom: 40px;
+    @include fullWidth;
+  }
+}
+
+footer {
+  height: $footerHeight;
+  width: 100%;
+  background-color: $gqOrange;
+  @include fullWidth;
+}
