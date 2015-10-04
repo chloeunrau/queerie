@@ -1,8 +1,9 @@
 
 /* IMPORT */
 
-@import url(http://fonts.googleapis.com/css
-            ?family=Open+Sans:400italic,700italic,400,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
 
 
 
@@ -20,15 +21,17 @@ $gqBrown: #523f2f;
 $gqBlack: #202020;
 $gqBeige: #f8e6a4;
 $gqYellow: #f5d751;
+$gqRed: #e52319;
 
 $headerHeight: 500px;
 $menuHeight: 68px;
-$aboutBoxHeight: 169px;
 $logoHeight: $headerHeight - ($menuHeight * 2);
 $footerHeight: 194px;
 $primaryMargin: 40px;
 $footerLogoWidth: 200px;
 $footerLogoSpacing: 50px;
+$aboutBoxHeight: 100px;
+$aboutBoxWidth: 310px;
 
 $breakSmall: 860px;
 $smLogoBreak: 980px;
@@ -322,13 +325,75 @@ body {
 }
 
 .content-home {
+  position: relative;
+
   #about-box {
-    height: $aboutBoxHeight;
+    position: relative;
+    min-height: $aboutBoxHeight;
     width: 100%;
     background-color: $gqBlue;
     margin-top: -15px;
     margin-bottom: $primaryMargin;
+    text-align: center;
     @include fullWidth;
+
+    font-family: 'Oswald', monospace;
+    font-size: 22px;
+    color: $gqWhite;
+
+    a, a:link {
+      color: $gqBeige;
+    }
+    a:hover {
+      color: $gqYellow;
+    }
+
+    span.beige {
+      color: $gqBeige;
+    }
+    span.yellow {
+      color: $gqYellow;
+    }
+
+    li.widget {
+      padding-bottom: 0;
+    }
+
+    #about-left, #about-divider, #about-right {
+      display: inline-block;
+    }
+
+    #about-left, #about-right {
+      width: $aboutBoxWidth;
+      min-height: $aboutBoxHeight;
+    }
+
+    #about-left {
+      text-align: right;
+
+      @media screen and (max-width: $breakSmall) {
+        text-align: center;
+      }
+    }
+
+    #about-divider {
+      margin: 10px 20px;
+      width: 2px;
+      height: 100px;
+      background-color: $gqRed;
+
+      @media screen and (max-width: $breakSmall) {
+        display: none;
+      }
+    }
+
+    #about-right {
+      text-align: left;
+
+      @media screen and (max-width: $breakSmall) {
+        display: none;
+      }
+    }
   }
 }
 
