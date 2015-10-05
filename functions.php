@@ -2,34 +2,39 @@
 
 /* Register widget areas */
 register_sidebar( array(
-    'id'          => 'homeother',
-    'name'        => 'Home Other',
-    'description' => 'The Widget area for additional content for the Home page. Appears below all other Home page content.'
-) );
-register_sidebar( array(
-    'id'          => 'homeaboutleft',
-    'name'        => 'Home About Left',
-    'description' => ''
-) );
-register_sidebar( array(
-    'id'          => 'homeaboutright',
-    'name'        => 'Home About Right',
-    'description' => ''
+    'id'          => 'homeothertop',
+    'name'        => 'Home Other Top',
+    'description' => 'The Widget area for additional content for the Home page. Appears below the about box, and above the rest of the Home page content.'
 ) );
 register_sidebar( array(
     'id'          => 'homenexttime',
     'name'        => 'Home Next Time',
-    'description' => ''
+    'description' => 'Home page content under the title "Next Time on Gender Queeries"'
 ) );
 register_sidebar( array(
     'id'          => 'homelasttime',
     'name'        => 'Home Last Time',
-    'description' => ''
+    'description' => 'Home page content under the title "Previously on Gender Queeries"'
+) );
+register_sidebar( array(
+    'id'          => 'homeaboutleft',
+    'name'        => 'Home About Left',
+    'description' => 'The Widget area for the left side of the Home page About box.'
+) );
+register_sidebar( array(
+    'id'          => 'homeaboutright',
+    'name'        => 'Home About Right',
+    'description' => 'The Widget area for the right side of the Home page About box.'
+) );
+register_sidebar( array(
+    'id'          => 'homeotherbottom',
+    'name'        => 'Home Other Bottom',
+    'description' => 'The Widget area for additional content for the Home page. Appears below all other Home page content.'
 ) );
 register_sidebar( array(
     'id'          => 'archivecontrols',
     'name'        => 'Archive Controls',
-    'description' => 'The Widget area for the Archive pages.'
+    'description' => 'The Widget area for the Archive pages. Appears above all other content on the page.'
 ) );
 
 
