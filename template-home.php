@@ -18,19 +18,37 @@ Template Name: Home
     </div>
   </div>
 
+  <div class="home-other">
+    <?php dynamic_sidebar( 'Home Other Top' ); ?>
+  </div>
+
   <div id="next-on-gq" class="home-box">
-    <?php dynamic_sidebar( 'Home Next Time' ); ?>
-    <div class="clearfix"></div>
+    <div class="home-widget-title">
+      <p>NEXT TIME</p>
+      <p>on Gender Queeries</p>
+      <p class="time">8pm - 9pm</p>
+    </div>
+    <div class="home-widget">
+      <?php dynamic_sidebar( 'Home Next Time' ); ?>
+    </div>
   </div>
 
   <div id="previously-on-gq" class="home-box">
-    <?php dynamic_sidebar( 'Home Last Time' ); ?>
-    <div class="clearfix"></div>
+    <div class="home-widget-title">
+      <p>PREVIOUSLY</p>
+      <p>on Gender Queeries
+    </div>
+    <div class="home-widget">
+      <?php dynamic_sidebar( 'Home Last Time' ); ?>
+    </div>
   </div>
 
-  <div id="other">
-    <?php dynamic_sidebar( 'Home Other' ); ?>
-    <div class="clearfix"></div>
+  <div id="home-archive-link" class="home-box">
+    <a href="<?php echo bloginfo('home'); ?>/archive/">See more episode summaries in the Archive</a>
+  </div>
+
+  <div class="home-other">
+    <?php dynamic_sidebar( 'Home Other Bottom' ); ?>
   </div>
 
 </div>
