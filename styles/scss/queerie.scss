@@ -141,6 +141,18 @@ a img.aligncenter {
   margin-right: auto;
 }
 
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
 .clearfix {
   clear: both;
 }
@@ -392,6 +404,101 @@ body {
 
       @media screen and (max-width: $breakSmall) {
         display: none;
+      }
+    }
+  }
+
+  .home-box {
+    position: relative;
+    text-align: center;
+
+    .home-widget-title, .home-widget {
+      display: inline-block;
+
+      @media screen and (max-width: $breakSmall) {
+        display: block;
+      }
+    }
+
+    .home-widget-title {
+      width: 200px;
+      font-family: 'Oswald', Arial, sans-serif;
+      font-size: 24px;
+      color: $gqBlue;
+      text-align: right;
+      vertical-align: top;
+      margin-bottom: 20px;
+
+      @media screen and (max-width: $breakSmall) {
+        text-align: left;
+      }
+
+      p {
+        margin: 0;
+        &.time {
+          font-size: 22px;
+          color: $gqOrange;
+        }
+      }
+    }
+
+    .home-widget {
+      width: 400px;
+      padding-left: 30px;
+      text-align: left;
+
+      @media screen and (max-width: $breakSmall) {
+        width: auto;
+      }
+
+      a, a:link {
+        color: $gqOrange;
+      }
+      a:hover {
+        color: $gqYellow;
+      }
+
+      h2 {
+        margin-top: 0;
+      }
+
+      h3 {
+        //
+      }
+
+      h4 {
+        margin: -15px 0 15px 0;
+      }
+    }
+  }
+
+  .home-other {
+    text-align: center;
+
+    a, a:link {
+      color: $gqOrange;
+    }
+    a:hover {
+      color: $gqYellow;
+    }
+
+    .widget_polls-widget {
+      max-width: 400px;
+      margin: 0 auto 0 auto;
+    }
+  }
+
+  #home-archive-link {
+    margin-bottom: 70px;
+
+    a, a:link {
+      padding: 10px 20px;
+      margin-bottom: 20px;
+      background-color: $gqOrange;
+      color: $gqWhite;
+
+      &:hover {
+        background-color: $gqYellow;
       }
     }
   }
