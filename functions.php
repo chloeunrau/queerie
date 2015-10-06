@@ -2,9 +2,14 @@
 
 /* Register widget areas */
 register_sidebar( array(
-    'id'          => 'homeothertop',
-    'name'        => 'Home Other Top',
-    'description' => 'The Widget area for additional content for the Home page. Appears below the about box, and above the rest of the Home page content.'
+    'id'          => 'homeaboutleft',
+    'name'        => 'Home About Left',
+    'description' => 'The Widget area for the left side of the Home page About box.'
+) );
+register_sidebar( array(
+    'id'          => 'homeaboutright',
+    'name'        => 'Home About Right',
+    'description' => 'The Widget area for the right side of the Home page About box.'
 ) );
 register_sidebar( array(
     'id'          => 'homenexttime',
@@ -17,14 +22,9 @@ register_sidebar( array(
     'description' => 'Home page content under the title "Previously on Gender Queeries"'
 ) );
 register_sidebar( array(
-    'id'          => 'homeaboutleft',
-    'name'        => 'Home About Left',
-    'description' => 'The Widget area for the left side of the Home page About box.'
-) );
-register_sidebar( array(
-    'id'          => 'homeaboutright',
-    'name'        => 'Home About Right',
-    'description' => 'The Widget area for the right side of the Home page About box.'
+    'id'          => 'homeothertop',
+    'name'        => 'Home Other Top',
+    'description' => 'The Widget area for additional content for the Home page. Appears below the about box, and above the rest of the Home page content.'
 ) );
 register_sidebar( array(
     'id'          => 'homeotherbottom',
@@ -35,6 +35,11 @@ register_sidebar( array(
     'id'          => 'archivecontrols',
     'name'        => 'Archive Controls',
     'description' => 'The Widget area for the Archive pages. Appears above all other content on the page.'
+) );
+register_sidebar( array(
+    'id'          => 'archivepostabout',
+    'name'        => 'Archive Post About',
+    'description' => 'The About section at the bottom of each Archive post page. Should only contain a single Text widget.'
 ) );
 
 

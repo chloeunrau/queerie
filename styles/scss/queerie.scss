@@ -54,6 +54,12 @@ $breakBig: 1200px;
   text-shadow: 1px 1px 1px $gqCopyShadow;
 }
 
+@mixin fontTitle {
+  font-family: 'Oswald', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased !important;
+  text-shadow: 1px 1px 1px $gqCopyShadow;
+}
+
 @mixin linearGradient($top, $bottom){
     background: $top; /* Old browsers */
     background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
@@ -104,14 +110,65 @@ $breakBig: 1200px;
   padding-right: 9999px;
 }
 
+@mixin widgetReset {
+  list-style-type: none;
+}
+
+@mixin homeTitle {
+  @include fontTitle;
+  width: 200px;
+  font-size: 24px;
+  color: $gqBlue;
+  text-align: right;
+  vertical-align: top;
+  margin-bottom: 20px;
+
+  @media screen and (max-width: $breakSmall) {
+    text-align: left;
+  }
+}
+
+@mixin homeTitleAndContent {
+  display: inline-block;
+
+  @media screen and (max-width: $breakSmall) {
+    display: block;
+  }
+}
+
+@mixin homeContent {
+  width: 400px;
+  padding-left: 30px;
+  text-align: left;
+
+  @media screen and (max-width: $breakSmall) {
+    width: auto;
+  }
+}
+
+@mixin bigOrangeButton {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  background-color: $gqOrange;
+  color: $gqWhite;
+
+  &:hover {
+    background-color: $gqYellow;
+  }
+}
+
 
 
 
 /* STYLES */
 
 a, a:link {
+  color: $gqOrange;
   text-decoration: none;
   cursor: pointer;
+}
+a:hover {
+  color: $gqYellow;
 }
 
 img.alignright {
@@ -141,8 +198,16 @@ a img.aligncenter {
   margin-right: auto;
 }
 
+h1, h2, h3, h4 {
+  @include fontTitle;
+}
+
+h1 {
+  font-size: 30px;
+}
+
 h2 {
-  font-size: 22px;
+  font-size: 24px;
 }
 
 h3 {
@@ -153,8 +218,17 @@ h4 {
   font-size: 14px;
 }
 
+blockquote {
+  background-color: rgba(0,0,0,0.04);
+  padding: 10px 20px;
+}
+
 .clearfix {
   clear: both;
+}
+
+a.big-orange-button {
+  @include bigOrangeButton;
 }
 
 html, body {
@@ -303,7 +377,7 @@ body {
 
   // Styles for Widgets contained in the main content area
   li.widget {
-    list-style-type: none;
+    @include widgetReset;
     padding-bottom: $primaryMargin;
 
     img {
@@ -334,9 +408,39 @@ body {
       color: $gqBlack;
     }
   }
+
+  li.widget_search {
+    //
+    input#s {
+      height: 30px;
+      font-size: 16px;
+    }
+    input#searchsubmit {
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+    h2.widgettitle {
+      display: none;
+    }
+    label.screen-reader-text {
+      display: none;
+    }
+  }
+
+  #pagination {
+    a, a:link {
+      @include bigOrangeButton;
+    }
+    .alignleft {
+      float: left;
+    }
+    .alignright {
+      float: right;
+    }
+  }
 }
 
-.content-home {
+#content-home {
   position: relative;
 
   #about-box {
@@ -349,16 +453,9 @@ body {
     text-align: center;
     @include fullWidth;
 
-    font-family: 'Oswald', Arial, sans-serif;
+    @include fontTitle;
     font-size: 22px;
     color: $gqWhite;
-
-    a, a:link {
-      color: $gqBeige;
-    }
-    a:hover {
-      color: $gqYellow;
-    }
 
     span.beige {
       color: $gqBeige;
@@ -413,25 +510,11 @@ body {
     text-align: center;
 
     .home-widget-title, .home-widget {
-      display: inline-block;
-
-      @media screen and (max-width: $breakSmall) {
-        display: block;
-      }
+      @include homeTitleAndContent;
     }
 
     .home-widget-title {
-      width: 200px;
-      font-family: 'Oswald', Arial, sans-serif;
-      font-size: 24px;
-      color: $gqBlue;
-      text-align: right;
-      vertical-align: top;
-      margin-bottom: 20px;
-
-      @media screen and (max-width: $breakSmall) {
-        text-align: left;
-      }
+      @include homeTitle;
 
       p {
         margin: 0;
@@ -443,20 +526,7 @@ body {
     }
 
     .home-widget {
-      width: 400px;
-      padding-left: 30px;
-      text-align: left;
-
-      @media screen and (max-width: $breakSmall) {
-        width: auto;
-      }
-
-      a, a:link {
-        color: $gqOrange;
-      }
-      a:hover {
-        color: $gqYellow;
-      }
+      @include homeContent;
 
       h2 {
         margin-top: 0;
@@ -475,13 +545,6 @@ body {
   .home-other {
     text-align: center;
 
-    a, a:link {
-      color: $gqOrange;
-    }
-    a:hover {
-      color: $gqYellow;
-    }
-
     .widget_polls-widget {
       max-width: 400px;
       margin: 0 auto 0 auto;
@@ -490,16 +553,76 @@ body {
 
   #home-archive-link {
     margin-bottom: 70px;
+  }
+}
 
-    a, a:link {
-      padding: 10px 20px;
-      margin-bottom: 20px;
-      background-color: $gqOrange;
-      color: $gqWhite;
+#content-archive {
+  position: relative;
+  text-align: center;
 
-      &:hover {
-        background-color: $gqYellow;
+  .post-title, .post-content {
+    @include homeTitleAndContent;
+  }
+
+  .post-title {
+    @include homeTitle;
+
+    h2 {
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+    h4 {
+      font-weight: normal;
+      margin-top: 0;
+    }
+  }
+
+  .post-content {
+    @include homeContent;
+
+    h4 {
+      margin-top: -20px;
+    }
+  }
+
+  div.separator {
+    height: 50px;
+  }
+
+  #archive-controls {
+    text-align: center;
+    li.widget_search {
+      @include widgetReset;
+      input#s {
+        width: 300px;
       }
+    }
+  }
+}
+
+#content-post {
+  position: relative;
+
+  a.big-orange-button {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  #post-content {
+    margin-bottom: 100px;
+  }
+
+  #post-about {
+    margin-top: 50px;
+    margin-bottom: -40px;
+    padding-top: 30px;
+    background-color: $gqBlue;
+    color: $gqWhite;
+    @include fullWidth;
+
+    h2.widgettitle {
+      font-size: 18px;
+      color: $gqRed;
     }
   }
 }

@@ -1,16 +1,11 @@
 <?php get_header(); ?>
 
-<!-- DEFAULT BLOG PAGE -->
+<!-- DEFAULT ARCHIVE ("Blog") PAGE -->
 <!-- applied to blog views with no defined template -->
 
-<div class="main-content content-blog">
+<div id="content-archive" class="main-content">
 
   <div id="archive-controls">
-    <div class="links">
-      <ul>
-        <li><span class="nolink">&laquo; Back to archive</span></li>
-      </ul>
-    </div>
     <?php dynamic_sidebar( 'Archive Controls' ); ?>
   </div>
 
@@ -19,13 +14,14 @@
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
       <div class="post">
-        <h1>
-          <a href="<?php the_permalink(); ?>">
-            <?php the_title(); ?>
-          </a>
-        </h1>
-        <h2><?php the_date(); ?></h2>
-        <?php the_content( $more_link_text, $stripteaser ); ?>
+        <div class="post-title">
+          <h2><?php the_date(); ?></h2>
+          <h4>Posted by <?php the_author(); ?></h4>
+        </div>
+        <div class="post-content">
+          <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+          <?php the_content( $more_link_text, $stripteaser ); ?>
+        </div>
       </div>
 
       <div class="separator"></div>

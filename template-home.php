@@ -6,7 +6,7 @@ Template Name: Home
 
 <?php get_header(); ?>
 
-<div class="main-content content-home">
+<div id="content-home" class="main-content">
 
   <div id="about-box">
     <div id="about-left">
@@ -44,7 +44,7 @@ Template Name: Home
   </div>
 
   <div id="home-archive-link" class="home-box">
-    <a href="<?php echo bloginfo('home'); ?>/archive/">See more episode summaries in the Archive</a>
+    <a href="<?php echo bloginfo('home'); ?>/archive/" class="big-orange-button">See more episode summaries in the Archive</a>
   </div>
 
   <div class="home-other">
