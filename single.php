@@ -7,8 +7,8 @@
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
       <div class="post">
-        <h2><?php the_date(); ?></h2>
-        <h1><?php the_title(); ?></h1>
+        <h2 class="title"><?php the_date(); ?></h2>
+        <h1 class="title"><?php the_title(); ?></h1>
         <?php the_content() ?>
       </div>
 
@@ -33,7 +33,7 @@
 
   </div>
 
-  <a href="<?php echo bloginfo('home'); ?>/archive" class="big-orange-button">&laquo; Back to Archive</a>
+  <a href="<?php echo bloginfo('home'); ?>/archive" class="big-orange-button back-button">&laquo; Back to Archive</a>
 
   <div id="post-about">
     <?php dynamic_sidebar( 'Archive Post About' ); ?>

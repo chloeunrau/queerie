@@ -15,8 +15,8 @@
 
       <div class="post">
         <div class="post-title">
-          <h2><?php the_date(); ?></h2>
-          <h4>Posted by <?php the_author(); ?></h4>
+          <h2 class="title"><?php the_date(); ?></h2>
+          <h4 class="title">Posted by <?php the_author(); ?></h4>
         </div>
         <div class="post-content">
           <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>

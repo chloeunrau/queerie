@@ -397,16 +397,6 @@ body {
         border-color: $gqBrown;
       }
     }
-
-    h1 {
-      font-size: 18px;
-      color: $gqBlack;
-      padding-bottom: 0;
-    }
-
-    h2 {
-      color: $gqBlack;
-    }
   }
 
   li.widget_search {
@@ -442,6 +432,17 @@ body {
 
 #content-home {
   position: relative;
+
+  h1 {
+    font-size: 18px;
+    color: $gqBlack;
+    padding-bottom: 0;
+  }
+
+  h2:first-child {
+    margin-top: 0;
+    color: $gqBlack;
+  }
 
   #about-box {
     position: relative;
@@ -527,18 +528,6 @@ body {
 
     .home-widget {
       @include homeContent;
-
-      h2 {
-        margin-top: 0;
-      }
-
-      h3 {
-        //
-      }
-
-      h4 {
-        margin: -15px 0 15px 0;
-      }
     }
   }
 
@@ -567,22 +556,19 @@ body {
   .post-title {
     @include homeTitle;
 
-    h2 {
+    h2.title, h4.title {
       font-weight: normal;
+    }
+    h2.title {
       margin-bottom: 10px;
     }
-    h4 {
-      font-weight: normal;
+    h4.title {
       margin-top: 0;
     }
   }
 
   .post-content {
     @include homeContent;
-
-    h4 {
-      margin-top: -20px;
-    }
   }
 
   div.separator {
@@ -603,7 +589,17 @@ body {
 #content-post {
   position: relative;
 
-  a.big-orange-button {
+  h1.title, h2.title {
+    color: $gqBlue;
+  }
+  h1.title {
+    margin-top: 10px;
+  }
+  h2.title {
+    margin-bottom: 0;
+  }
+
+  a.back-button {
     margin-top: 100px;
     margin-bottom: 100px;
   }
@@ -625,6 +621,7 @@ body {
       color: $gqRed;
     }
   }
+
   div#post-comments {
     background-color: rgba(0,0,0,0.05);
     margin-top: 40px;
@@ -645,6 +642,17 @@ body {
     }
   }
 }
+
+#content-search {
+  position:relative;
+  text-align: center;
+  a, a:link {
+    padding-left: 30px;
+  }
+
+  #search-content {
+    margin-top: 50px;
+  }
 }
 
 footer {
