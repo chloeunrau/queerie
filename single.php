@@ -12,6 +12,14 @@
         <?php the_content() ?>
       </div>
 
+      <div id="post-comments">
+        <?php
+        if ( comments_open() || get_comments_number() ) :
+  				comments_template();
+  			endif;
+        ?>
+      </div>
+
       <?php endwhile; else: ?>
 
       <div class="error">
