@@ -14,7 +14,9 @@
 <div id="wrapper"> <!-- ends in footer.php -->
 
 <div id="header">
-  <img src="<?php echo bloginfo('template_url'); ?>/images/logo.png" class="main-logo" />
+  <div id="logo-holder">
+    <img src="<?php echo bloginfo('template_url'); ?>/images/logo.png" class="main-logo" />
+  </div>
 </div>
 
 <div id="content"> <!-- endsn in footer.php -->
