@@ -607,6 +607,10 @@ body {
 
   .post-content {
     @include homeContent;
+
+    h2.summary-title {
+      display: none;
+    }
   }
 
   div.separator {
