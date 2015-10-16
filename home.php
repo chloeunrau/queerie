@@ -19,7 +19,9 @@
           <h4 class="title">Posted by <?php the_author(); ?></h4>
         </div>
         <div class="post-content">
-          <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+          <h2 class="post-label">
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+          </h2>
           <?php the_content( $more_link_text, $stripteaser ); ?>
         </div>
       </div>
@@ -44,6 +46,7 @@
       <div class="alignright">
         <?php next_posts_link('Older Content &raquo;') ?>
       </div>
+      <div class="clearfix"></div>
     </div>
 
   </div> <!-- #archive -->

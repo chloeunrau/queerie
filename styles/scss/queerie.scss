@@ -413,6 +413,13 @@ body {
 .main-content {
   padding: $primaryMargin;
 
+  h2.post-label {
+    margin-bottom: 10px;
+  }
+  h4.listen-to-episode {
+    margin-top: 0;
+  }
+
   // Styles for Widgets contained in the main content area
   li.widget {
     @include widgetReset;
@@ -610,6 +617,10 @@ body {
 
     h2.summary-title {
       display: none;
+    }
+
+    p:first-of-type{
+      margin-top: 0;
     }
   }
 
