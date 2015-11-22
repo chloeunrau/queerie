@@ -659,6 +659,10 @@ body {
 
   #post-content {
     margin-bottom: 100px;
+
+    h2.summary-title {
+      display: none;
+    }
   }
 
   #post-about {
